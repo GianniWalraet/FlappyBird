@@ -25,7 +25,6 @@ Obstacle::~Obstacle()
 
 void Obstacle::Draw() const
 {
-	std::cout << "Draw Obstacle\n";
 	utils::SetColor(Color4f(0, 0, 1, 1));
 	utils::FillRect(m_RectBottom);
 	utils::FillRect(m_RectTop);

@@ -12,12 +12,12 @@ UI::UI(const Window& window)
 
 UI::~UI()
 {
-
+	delete m_pStartButtonT;
 }
 
 void UI::Draw() const
 {
-	//m_pStartButtonT->Draw(Rectf(m_Window.width / 2 - m_pStartButtonT->GetWidth(), m_Window.height / 3 - m_pStartButtonT->GetHeight(), m_pStartButtonT->GetWidth() * 2, m_pStartButtonT->GetHeight() * 2));
+	m_pStartButtonT->Draw(Rectf(m_Window.width / 2 - m_pStartButtonT->GetWidth(), m_Window.height / 3 - m_pStartButtonT->GetHeight(), m_pStartButtonT->GetWidth() * 2, m_pStartButtonT->GetHeight() * 2));
 }
 
 void UI::Update()

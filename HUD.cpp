@@ -21,6 +21,7 @@ HUD::~HUD()
 {
 	delete m_pScoreT;
 	delete m_pScoreBGT;
+	delete m_pVolumeT;
 }
 
 void HUD::Draw() const

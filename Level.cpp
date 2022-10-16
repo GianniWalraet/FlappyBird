@@ -21,6 +21,7 @@ Level::Level(const Window& window, const Point2f& cameraPos)
 Level::~Level()
 {
 	delete m_pChunkManager;
+	delete m_pBackground;
 }
 
 void Level::Draw(const Point2f& cameraPos) const

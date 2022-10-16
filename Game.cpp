@@ -40,23 +40,11 @@ void Game::Cleanup()
 {
 	delete m_pPlayer;
 	delete m_pLevel;
-
 	delete SoundManager::Get();
 }
 
 void Game::Update(float elapsedSec)
 {
-	// Check keyboard state
-	//const Uint8 *pStates = SDL_GetKeyboardState( nullptr );
-	//if ( pStates[SDL_SCANCODE_RIGHT] )
-	//{
-	//	std::cout << "Right arrow key is down\n";
-	//}
-	//if ( pStates[SDL_SCANCODE_LEFT] && pStates[SDL_SCANCODE_UP])
-	//{
-	//	std::cout << "Left and up arrow keys are down\n";
-	//}
-
 	if (!m_IsPaused)
 	{
 		m_IsPaused = m_pLevel->Update(m_Camera.GetPos(Rectf(m_pPlayer->GetPos().x, m_pPlayer->GetPos().y, m_pPlayer->GetWidth(), m_pPlayer->GetHeight())), m_Window, m_pPlayer);
@@ -80,7 +68,9 @@ void Game::Draw() const
 	glPopMatrix();
 
 	m_HUD.Draw();
-	m_UI.Draw();
+
+	if (m_IsPaused)
+		m_UI.Draw();
 }
 
 void Game::ProcessKeyDownEvent(const SDL_KeyboardEvent& e)

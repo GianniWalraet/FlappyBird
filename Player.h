@@ -42,8 +42,6 @@ private:
 
 	int m_Score;
 
-	bool m_IsDead;
-
 	Sprite* m_pSprite;
 
 	void ApplyGravity(float elapsedSec);

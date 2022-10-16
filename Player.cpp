@@ -40,10 +40,7 @@ Player::~Player()
 
 void Player::Draw() const
 {
-	utils::SetColor(Color4f(1, 1, 0, 1));
-	utils::DrawRect(m_Shape.left, m_Shape.bottom, m_Shape.width, m_Shape.height);
 	m_pSprite->Draw(Point2f(m_Shape.left, m_Shape.bottom), m_Scale);
-	//m_pTexture->Draw(m_Shape);
 }
 
 void Player::Update(float elapsedSec, bool gamePaused)
@@ -74,7 +71,6 @@ void Player::Reset()
 
 void Player::IncrementScore()
 {
-	std::cout << "Score Incremented\n";
 	SoundManager::Get()->PlaySoundEffect(Sounds::point);
 	++m_Score;
 }

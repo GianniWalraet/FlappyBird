@@ -25,7 +25,7 @@ Chunk::~Chunk()
 
 void Chunk::Draw() const
 {
-	m_pBackground->Draw(this->GetPosX(), this->GetWidth());
+	m_pBackground->Draw(static_cast<float>(this->GetPosX()), static_cast<float>(this->GetWidth()));
 	for (const Obstacle* element : m_pObstacles)
 	{
 		element->Draw();
